@@ -1,0 +1,25 @@
+<launch>  <!--edited 22.12.15 -->s
+    <node pkg="md" type="md_node" name="md_node" output="screen">
+        <param name = "diameter"         value = "193"/>
+        <param name = "wheelLength"      value = "612"/>
+        <param name = "reduction"        value = "20"/>
+        <param name = "baudrate"         value = "57600"/>
+        <param name = "direction"        value = "0"/> <!--0:?1:?2:?3:? -->s
+        <param name = "PC"               value = "172"/> <!-- PC ID -->
+        <param name = "MDUI"             value = "184"/>
+        <param name = "MDT"              value = "183"/>
+        <param name = "RMID"             value = "184"/>
+        <param name = "halltype"         value = "10"/> <!-- number of motor poles -->
+        <param name = "maxrpm"           value = "3500"/> 
+        <param name = "angleresolution"  value = "0"/> <!-- 0:분해능 0.1도 1: 분해능 1도 (Robot 좌표계 기준)-->
+        <param name = "slowstart"        value = "300"/> <!-- SlowStart 비율을 조정 0~1023(0~15s 에 해당)-->
+        <param name = "slowdown"         value = "300"/> <!-- SlowStart 비율을 조정 0~1023(0~15s 에 해당)-->
+    </node>
+
+    <node pkg="md" type="vel_cmd_node" name="vel_cmd_node" output="screen">
+        <param name = "reset_odometry"  value = "0"/>
+        <param name = "reset_angle"     value = "0"/>
+        <param name = "reset_alarm"     value = "0"/>
+    </node>
+
+</launch>
